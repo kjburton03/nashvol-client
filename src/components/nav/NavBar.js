@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom"
+// import { Login } from "../auth/Login"
 import "./NavBar.css"
 
 export const NavBar = () => {
@@ -10,10 +11,10 @@ export const NavBar = () => {
                 <Link className="navbar__link" to="/events">Upcoming Events</Link>
             </li>
             {
-                localStorage.getItem("nash_user")
+                localStorage.getItem("nash_token")
                     ? <li className="navbar__item navbar__logout">
                         <Link className="navbar__link" to="" onClick={() => {
-                            localStorage.removeItem("nash_user")
+                            localStorage.removeItem("nash_token")
                             navigate("/", {replace: true})
                         }}>Logout</Link>
                     </li>
