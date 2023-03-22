@@ -21,14 +21,13 @@ export const Register = () => {
                 "username": username.current.value,
                 "first_name": firstName.current.value,
                 "last_name": lastName.current.value,
-                "bio": bio.current.value,
                 "password": password.current.value
             }
 
             registerUser(newUser)
                 .then(res => {
                     if ("token" in res) {
-                        localStorage.setItem("nash_user", res.token)
+                        localStorage.setItem("nash_token", res.token)
                         navigate("/")
                     }
                 })
