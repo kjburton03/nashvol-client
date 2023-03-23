@@ -6,6 +6,7 @@ import { Login } from "../auth/Login"
 import { Register } from "../auth/Register"
 import { Authorized } from "./Authorized"
 import { EventForm } from "../event/EventForm"
+import { UpdateEvent } from "../event/UpdateEvent"
 
 
 
@@ -15,11 +16,12 @@ export const ApplicationViews = () => {
 		<Routes>
 			<Route path="/login" element={<Login />} />
 			<Route path="/register" element={<Register />} />
-			<Route element={<Authorized />}>
-				<Route path="/events" element={<EventList />} />
-			</Route>
+			{/* <Route element={<Authorized />}> */}
+			<Route path="/events" element={<EventList />} />
+			{/* <Route path="/events" element={<EventList />} /> */}
 			<Route path="/eventform" element={<EventForm />} />
-			{/* <Route path="editevent/:eventId" element={<EditEvent />} /> */}
+			<Route path="editevent/:eventId" element={<UpdateEvent />} />
+			{/* </Route> */}
 		</Routes>
 	</>
 

@@ -21,7 +21,8 @@ export const Register = () => {
                 "username": username.current.value,
                 "first_name": firstName.current.value,
                 "last_name": lastName.current.value,
-                "password": password.current.value
+                "password": password.current.value,
+                "bio": bio.current.value
             }
 
             registerUser(newUser)
@@ -65,6 +66,10 @@ export const Register = () => {
                 <fieldset>
                     <label htmlFor="verifyPassword"> Verify Password </label>
                     <input ref={verifyPassword} type="password" name="verifyPassword" className="form-control" placeholder="Verify password" required />
+                </fieldset>
+                <fieldset>
+                    <label htmlFor="inputBio">Bio</label>
+                    <input ref={bio} type="text" name="bio" className="form-control" placeholder="Bio" required />
                 </fieldset>
                 <fieldset style={{
                     textAlign: "center"
