@@ -1,4 +1,4 @@
- import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { deleteEvent, getEvents, joinEvent, leaveEvent } from "../../managers/EventManager"
 // import "./event.css"
@@ -23,23 +23,26 @@ export const EventList = (props) => {
 
     return (
         <>
+        <h1>Nashvols Last call volunteers</h1>
+        <article className="events">
         <button className="btn btn-2 btn-sep icon-create"
             onClick={() => {
-                navigate({ pathname: "/events/new" })
+                navigate({ pathname: "/eventForm" })
                 }}>Register New Event</button>
-        <article className="events">
             {
                 events.map(event => {
                     return <section key={`event--${event.id}`} className="event">
-                        
+                        <div className="event__name">{event.name}</div>
                         <div className="event__location"> Location: {event.location} </div>
                         <div className="event__date"> Date: {event.date} </div>
                         <div className="event__details">Details:  {event.details}</div>
-                        <div className="event__organizer">{event.title} Organized by {event.organizing_volunteer.full_name}</div>
+                        <div className="event__type">Event Type:{event.eventType} </div>
+                        <div className="event__organizer"> Organized by {event.organizer}</div>
+                        <div className="event__volunteers"> {event.eventVolunteers.length} Volunteers joined </div>
                         <div className="event__footer">
                             <button className="btn btn-2 btn-sep icon-create"
                                 onClick={() => {
-                                    navigate({ pathname: `edit/${event.id}` })
+                                    navigate({ pathname: `editevent/${event.id}` })
                                     }}>Edit</button>
                                     {deleteButton(event.id)}   
                         

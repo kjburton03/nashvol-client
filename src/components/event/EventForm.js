@@ -85,7 +85,7 @@ export const EventForm = () => {
                     evt.preventDefault()
 
                     const event = {
-                        organizing_volunteer: currentEvent.organizing_volunteer,
+                        organizing_volunteer: (currentEvent.organizing_volunteer),
                         location: (currentEvent.location),
                         date: (currentEvent.date),
                         name: (currentEvent.name),
