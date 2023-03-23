@@ -6,20 +6,33 @@ import { deleteEvent, getEvents, joinEvent, leaveEvent } from "../../managers/Ev
 export const EventList = (props) => {
     const [ events, setEvents ] = useState([])
     const navigate = useNavigate()
+    const userId = parseInt(localStorage.getItem("nash_token"));
 
     useEffect(() => {
         getEvents().then(data => setEvents(data))
     }, [])
 
+    useEffect(() => {
+        getEvents().then((data) => { 
+          // Update addedByCurrentUser property for each book
+
+        const updatedEvents = data.map((event) => ({
+            ...event,
+            addedByCurrentUser: event.volunteer.id === parseInt(userId),
+        }));
+
+        setEvents(updatedEvents);
+        });
+    }, [userId]);
+    
     const deleteButton = (id) => {
-        return <button onClick={() => {
             deleteEvent(id)
             .then(() => {
                     getEvents().then(data => setEvents(data))
-                })
             
-        }} className="btn2 btn-2 btn-sep icon-create">Delete</button>
+        })
     }
+
 
     return (
         <>
@@ -36,16 +49,21 @@ export const EventList = (props) => {
                         <div className="event__location"> Location: {event.location} </div>
                         <div className="event__date"> Date: {event.date} </div>
                         <div className="event__details">Details:  {event.details}</div>
-                        <div className="event__type">Event Type:{event.eventType} </div>
+                        <div className="event__type">Event Type:{event.eventType.eventType} </div>
                         <div className="event__organizer"> Organized by {event.organizer}</div>
                         <div className="event__volunteers"> {event.eventVolunteers.length} Volunteers joined </div>
                         <div className="event__footer">
-                            <button className="btn btn-2 btn-sep icon-create"
-                                onClick={() => {
-                                    navigate({ pathname: `editevent/${event.id}` })
-                                    }}>Edit</button>
-                                    {deleteButton(event.id)}   
-                        
+                        {event.organizerOfEvent ? (
+                            <><button className="btn btn-2 btn-sep icon-create"
+                                    onClick={() => {
+                                        navigate({ pathname: `editevent/${event.id}` })
+                                    } }>Edit</button><button className="btn btn-2 btn-sep icon-create"
+                                        onClick={() => { deleteButton(event.id) } }>Delete</button></>                           
+
+                
+                ) : (
+                <></>
+                )}
                             {
                                 event.joined 
                                 ?
@@ -73,3 +91,8 @@ export const EventList = (props) => {
         </>
     )
 }
+
+                                // onClick={() => {
+                                //     navigate({ pathname: `editevent/${event.id}` })
+                                //     }}>Edit</button>
+                                //     {deleteButton(event.id)}   
