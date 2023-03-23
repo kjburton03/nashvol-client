@@ -23,6 +23,7 @@ export const EventList = (props) => {
 
     return (
         <>
+        <h1>Nashvols Last call volunteers</h1>
         <article className="events">
         <button className="btn btn-2 btn-sep icon-create"
             onClick={() => {
@@ -35,7 +36,9 @@ export const EventList = (props) => {
                         <div className="event__location"> Location: {event.location} </div>
                         <div className="event__date"> Date: {event.date} </div>
                         <div className="event__details">Details:  {event.details}</div>
-                        <div className="event__organizer">{event.title} Organized by {event.organizing_volunteer}</div>
+                        <div className="event__type">Event Type:{event.eventType} </div>
+                        <div className="event__organizer"> Organized by {event.organizer}</div>
+                        <div className="event__volunteers"> {event.eventVolunteers.length} Volunteers joined </div>
                         <div className="event__footer">
                             <button className="btn btn-2 btn-sep icon-create"
                                 onClick={() => {

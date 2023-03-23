@@ -10,6 +10,11 @@ export const UpdateEvent = () => {
          id: 0
         } 
      ])
+    const [eventTypes, setEventTypes] = useState ([ 
+        {
+            id: 0
+        }
+    ])
     const { eventId } = useParams()
     /*
         Since the input fields are bound to the values of
@@ -29,6 +34,7 @@ export const UpdateEvent = () => {
         getEventById(eventId).then((data) => {
             setCurrentEvent(data)
         })
+        getEventTypes(eventId).then((data) => { setEventTypes(data)})
 
     }, [eventId])
 
@@ -44,20 +50,6 @@ export const UpdateEvent = () => {
             <h2 className="eventForm__title">Update Event</h2>
             <fieldset>
                 <div className="form-group">
-                    <label className="label">Event: </label>
-                        <select
-                                name="event"
-                                className="form-control"
-                                value={currentEvent.event.id}
-                                onChange={(event) => {
-                                    const copy = { ...currentEvent }
-                                    copy.event = parseInt(event.target.value)
-                                    setCurrentEvent(copy)
-                                }}>
-                                {/* {games.map(game => ( 
-                                            <option key={`game--${game.id}`} value={game.id} name={game.name}>{game.name}</option>                         
-                                    ))} */}
-                        </select>
                     <label htmlFor="details">Details: </label>
                     <input type="text" name="details" required autoFocus className="form-control"
                         value={currentEvent.details}
@@ -74,7 +66,7 @@ export const UpdateEvent = () => {
                         onChange={changeEventState}
                     />
                     <label className="label">Event Type: </label>
-                    {/* <select
+                    <select
                         name="eventType"
                         className="form-control"
                         value={currentEvent.eventType}
@@ -84,10 +76,10 @@ export const UpdateEvent = () => {
                             setCurrentEvent(copy)
                         }} >
                         <option value="0">Choose:</option>
-                        {setEventTypes.map(events => ( 
+                        {eventTypes.map(events => ( 
                                     <option key={`event--${events.id}`} value={events.id} name={events.eventType}>{events.eventType}</option>                         
                             ))}
-                    </select> */}
+                    </select>
                 </div>
             </fieldset>
 
