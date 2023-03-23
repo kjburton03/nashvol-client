@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { useNavigate, useParams } from 'react-router-dom'
 import { getEventById, getEventTypes, updateEvent } from "../../managers/EventManager.js"
-
+import './Event.css'
 
 export const UpdateEvent = () => {
     const navigate = useNavigate()

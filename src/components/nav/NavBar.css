@@ -1,4 +1,4 @@
-.navbar {
+/* .navbar {
     display: flex;
     flex-wrap: nowrap;
     justify-content: left;
@@ -12,4 +12,37 @@
 .navbar__logout {
     margin-left: auto;
 }
+ */
 
+ .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    list-style: none;
+    padding: 1rem;
+  }
+  
+  .navbar__item {
+    margin-right: 1rem;
+  }
+  
+  .navbar__item.active {
+    font-weight: bold;
+  }
+  
+  .navbar__link {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .navbar__link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .navbar__logout {
+    margin-left: auto;
+  }
+  

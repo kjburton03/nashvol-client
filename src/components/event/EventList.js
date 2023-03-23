@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { deleteEvent, getEvents, joinEvent, leaveEvent } from "../../managers/EventManager"
+import "./Event.css"
 // import "./event.css"
 
 export const EventList = (props) => {
@@ -49,7 +50,7 @@ export const EventList = (props) => {
                         <div className="event__location"> Location: {event.location} </div>
                         <div className="event__date"> Date: {event.date} </div>
                         <div className="event__details">Details:  {event.details}</div>
-                        <div className="event__type">Event Type: {event?.eventType?.eventType} </div>
+                        <div className="event__type">Event Type:{event?.eventType?.eventType} </div>
                         {/* <div className="event__organizer"> Organized by {event.organizer}</div> */}
                         <div className="event__volunteers"> {event?.eventVolunteers?.length} Volunteers joined </div>
                         <div className="event__footer">
