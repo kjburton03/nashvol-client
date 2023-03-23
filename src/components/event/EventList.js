@@ -18,7 +18,7 @@ export const EventList = (props) => {
 
         const updatedEvents = data.map((event) => ({
             ...event,
-            addedByCurrentUser: event.volunteer.id === parseInt(userId),
+            addedByCurrentUser: event.volunteer?.id === parseInt(userId),
         }));
 
         setEvents(updatedEvents);
@@ -49,9 +49,9 @@ export const EventList = (props) => {
                         <div className="event__location"> Location: {event.location} </div>
                         <div className="event__date"> Date: {event.date} </div>
                         <div className="event__details">Details:  {event.details}</div>
-                        <div className="event__type">Event Type:{event.eventType.eventType} </div>
-                        <div className="event__organizer"> Organized by {event.organizer}</div>
-                        <div className="event__volunteers"> {event.eventVolunteers.length} Volunteers joined </div>
+                        <div className="event__type">Event Type: {event?.eventType?.eventType} </div>
+                        {/* <div className="event__organizer"> Organized by {event.organizer}</div> */}
+                        <div className="event__volunteers"> {event?.eventVolunteers?.length} Volunteers joined </div>
                         <div className="event__footer">
                         {event.organizerOfEvent ? (
                             <><button className="btn btn-2 btn-sep icon-create"
