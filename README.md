@@ -1,3 +1,10 @@
+Front end technologies 
+Javascript | React | HTML5 | CSS | GIT | Github | VScode
+
+Back end technologies 
+Python | Django | Django REST | SQLite | GIT | Github | VScode
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +75,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+https://camo.githubusercontent.com/4a6c6851aab9b0042c0baaea2c61993ea052cff554d8a3d42cd51d67d304d452/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f646a616e676f253230726573742d6666313730393f7374796c653d666f722d7468652d6261646765266c6f676f3d646a616e676f266c6f676f436f6c6f723d7768697465
