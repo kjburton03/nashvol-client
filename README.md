@@ -1,4 +1,4 @@
-# Nashvols Last Call Volunteers
+# NashVols Last Call Volunteers
 A web application to help connect communities in need with local people who want to help on volunteer days
 
 ## Planning
