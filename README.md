@@ -1,4 +1,5 @@
 # Nashvols Last Call Volunteers
+A web application to help connect communities in need with local people who want to help on volunteer days
 
 ## Planning
 [WireFrame](https://miro.com/app/board/uXjVMeoiffs=/)
@@ -12,4 +13,7 @@ Javascript | React | HTML5 | CSS | GIT | Github | VScode
 ## Back end technologies 
 
 Python | Django | Django REST | SQLite | GIT | Github | VScode
+
+
+[Back end code](https://github.com/kjburton03/nashvol-server)
 
