@@ -2,7 +2,7 @@
 A web application to help connect communities in need with local people who want to help on volunteer days
 
 ## Planning
-[WireFrame](https://miro.com/app/board/uXjVMeoiffs=/)
+[Wire Frame](https://miro.com/app/board/uXjVMeoiffs=/)
 
 [ERD](https://dbdiagram.io/d/63ffa531296d97641d84baa3)
 
