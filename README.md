@@ -6,7 +6,7 @@ A web application to help connect communities in need with local people who want
 
 [ERD](https://dbdiagram.io/d/63ffa531296d97641d84baa3)
 
-## Front end technologies 
+## Front end technologies  
 
 Javascript | React | HTML5 | CSS | GIT | Github | VScode
 
