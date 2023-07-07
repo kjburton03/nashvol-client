@@ -43,6 +43,7 @@ export const EventList = (props) => {
             onClick={() => {
                 navigate({ pathname: "/eventForm" })
                 }}>Register New Event</button>
+            <article className="event__body">
             {
                 events.map(event => {
                     return <section key={`event--${event.id}`} className="event">
@@ -88,6 +89,7 @@ export const EventList = (props) => {
                     </section>
                 })
             }
+            </article>
         </article>
         </>
     )
