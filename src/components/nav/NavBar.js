@@ -15,7 +15,7 @@ export const NavBar = () => {
                     ? <li className="navbar__item navbar__logout">
                         <Link className="navbar__link" to="" onClick={() => {
                             localStorage.removeItem("nash_token")
-                            navigate("/", {replace: true})
+                            navigate("/login", {replace: true})
                         }}>Logout</Link>
                     </li>
                     : ""

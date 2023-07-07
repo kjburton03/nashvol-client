@@ -67,6 +67,29 @@ export const UpdateEvent = () => {
                     />
                     <label className="label">Event Type: </label>
                     <select
+                    name="eventType"
+                    className="form-control"
+                    value={currentEvent.eventType}
+                    onChange={(event) => {
+                        const copy = { ...currentEvent };
+                        copy.eventType = parseInt(event.target.value);
+                        setCurrentEvent(copy);
+                    }}
+                    >
+                    <option value="eventType"></option>
+                    {eventTypes.map(events => (
+                        <option
+                        key={`event--${events.id}`}
+                        value={events.id}
+                        name={events.eventType}
+                        >
+                        {events.eventType}
+                        </option>
+                    ))}
+                    </select>
+
+                    {/* <label className="label">Event Type: </label>
+                    <select
                         name="eventType"
                         className="form-control"
                         value={currentEvent.eventType}
@@ -75,11 +98,11 @@ export const UpdateEvent = () => {
                             copy.eventType = parseInt(event.target.value)
                             setCurrentEvent(copy)
                         }} >
-                        <option value="0">Choose:</option>
+                        <option value="">Choose:</option>
                         {eventTypes.map(events => ( 
                                     <option key={`event--${events.id}`} value={events.id} name={events.eventType}>{events.eventType}</option>                         
                             ))}
-                    </select>
+                    </select> */}
                 </div>
             </fieldset>
 

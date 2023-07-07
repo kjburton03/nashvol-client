@@ -1,7 +1,5 @@
 .events {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    justify-content: center;
 }
 
 .event {
@@ -17,6 +15,8 @@
     font-weight: bold;
     font-size: 20px;
     margin-bottom: 5px;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .event__location, .event__date {
@@ -29,7 +29,38 @@
     align-items: center;
     margin-top: 10px;
 }
-
+.event__body {
+    border-color: #0066cc;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 50%;
+    justify-content: center;
+    align-items: center; 
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* background-color: black; */
+    /* border-radius: 2%; */
+    /* border-color: #c6920eb7; */
+    /* border-width: .2rem; */
+    /* border-style:groove; */
+    width: 60rem;
+    height: 31.7rem;
+    /* margin-top: 7rem;
+    margin-left: 10rem; */
+    margin: 0 auto;
+    /* margin-top: -200; */
+    overflow:scroll;
+    /* padding-bottom: 50; */
+    /* border: inset; */
+    /* opacity: 75%; */
+    /* color: green */
+    
+}
 .btn {
     background-color: #383838;
     color: #fff;
@@ -46,10 +77,15 @@
 
 .btn-2 {
     margin-right: 10px;
+    justify-content: left;
 }
   
   .btn-3 {
     background-color: #383838;
+    color: #fff;
+    /* justify-content: right; */
+    flex-direction: row;
+    justify-content: space-around;
   }
   
   .icon-create::before {
