@@ -9,6 +9,7 @@ import { EventForm } from "../event/EventForm"
 import { UpdateEvent } from "../event/UpdateEvent"
 import { Home } from "../homie/home"
 
+
 export const ApplicationViews = () => {
 	return (
 	<Routes>

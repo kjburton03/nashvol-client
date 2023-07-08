@@ -69,10 +69,21 @@ export const EventForm = () => {
                             copy.eventType = parseInt(event.target.value)
                             setCurrentEvent(copy)
                         }} >
-                        <option value="0">Choose:</option>
+                        <option value="">Choose:</option>
+                    {eventTypes.map(event => (
+                        <option
+                            key={`event--${event.id}`}
+                            value={event.id}
+                            name={event.eventType}
+                        >
+                            {event.eventType}
+                        </option>
+                    ))}
+
+                        {/* <option value="0">Choose:</option>
                         {eventTypes.map(events => ( 
                                     <option key={`event--${events.id}`} value={events.id} name={events.eventType}>{events.eventType}</option>                         
-                            ))}
+                            ))} */}
                     </select>
                 </div>
             </fieldset>
