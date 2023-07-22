@@ -8,6 +8,7 @@ A web application to help connect communities in need with local people who want
 
 ## Front end technologies  
 
+
 Javascript | React | HTML5 | CSS | GIT | Github | VScode
 
 ## Back end technologies 
